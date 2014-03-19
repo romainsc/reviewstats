@@ -1,4 +1,4 @@
-#
+## -*- coding: utf-8 -*-
 # Copyright (C) 2011 - Soren Hansen
 # Copyright (C) 2013 - Red Hat, Inc.
 #
@@ -30,6 +30,16 @@ LOG = logging.getLogger(__name__)
 
 
 def get_projects_info(project=None, all_projects=False, base_dir='./projects'):
+    """Return the list of project dict objects
+    
+    :param project: pathname of the JSON project definition
+    :param all_projects: If True deserialize all the json files of officials projects in base_dir.
+    :param base_dir: dirname of the path containing the json projects files.
+     
+    Of course at least a project or all_projects=True must be given.
+    Official qualification is a key of the json file name “unofficial”, if present and true, its
+    an unofficial project.
+    """
     if all_projects:
         files = glob.glob('%s/*.json' % base_dir)
     else:

@@ -15,6 +15,9 @@ Contents:
    installation
    usage
    contributing
+   modules
+
+
 
 Indices and tables
 ==================
